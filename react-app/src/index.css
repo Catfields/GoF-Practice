@@ -1,0 +1,70 @@
+/* =========================================================================
+   设计模式刷题平台 —— Neo-Brutalism 主题
+   镜像 brutxui.site 的设计语言：粗 3px 描边、硬质 4px 偏移投影、重磅字体、
+   无圆角、高对比配色。所有组件共享全局 token，改一处全局生效。
+   ========================================================================= */
+
+:root {
+  /* ---- BrutxUI 全局设计 token ---- */
+  --brutal-border-width: 3px;
+  --brutal-border-color: #111111;
+  --brutal-shadow-color: #111111;
+  --brutal-shadow-offset: 5px;
+
+  /* ---- 基底（纸张色 + 墨色）---- */
+  --bg: #f4f1ea;
+  --paper: #ffffff;
+  --ink: #111111;
+  --ink-soft: #3a3a3a;
+  --muted: #6b6b6b;
+
+  /* ---- 强调色（Neo-Brutalism 常用高饱和霓虹）---- */
+  --primary: #2b59ff;
+  --primary-ink: #ffffff;
+  --accent-yellow: #ffd53d;
+  --accent-pink: #ff5d8f;
+  --accent-cyan: #12d7e6;
+  --accent-lime: #b7f542;
+
+  --green: #19a24b;
+  --green-bg: #b7f542;
+  --amber: #b45309;
+  --amber-bg: #ffd53d;
+  --red: #d81f2a;
+
+  --font: "Space Grotesk", "Arial Black", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --sidebar-w: 290px;
+  --radius: 0px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* 重磅字体工具类 */
+.bold { font-weight: 800; }
+.upper { text-transform: uppercase; letter-spacing: .03em; }
+.mono { font-family: var(--font-mono); }
+
+/* 键盘焦点环：粗黑描边，无圆角 */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}

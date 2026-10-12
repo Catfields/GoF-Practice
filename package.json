@@ -1,0 +1,24 @@
+{
+  "name": "design-pattern-practice",
+  "version": "2.0.0",
+  "description": "本地版设计模式刷题平台：通过刷算法题学习23种设计模式（React + Brutalist UI）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "install:ui": "cd react-app && npm install",
+    "build": "cd react-app && npm run build",
+    "build:ui": "npm run build",
+    "dev": "cd react-app && npm run dev",
+    "test": "node lexer-test.cjs && node history-store-test.cjs && node e2e-verify.cjs",
+    "test:lexer": "node lexer-test.cjs",
+    "test:api": "node e2e-verify.cjs",
+    "test:browser": "node browser-verify.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sql.js": "^1.14.2"
+  }
+}

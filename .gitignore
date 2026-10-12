@@ -1,0 +1,17 @@
+# 本地运行数据（答题进度、草稿、提交记录）
+/data/*.json
+
+# 本地浏览历史
+/data/history.sqlite
+/data/history.sqlite.tmp
+
+# 运行临时目录
+/data/tmp/
+
+# Node 依赖与构建产物
+node_modules/
+react-app/node_modules/
+react-app/dist/
+
+# 本机 ACL 权限恢复备份（非项目源码）
+.acl-recovery/

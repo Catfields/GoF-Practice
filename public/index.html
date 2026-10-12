@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>设计模式刷题平台</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="bg-effects">
+    <div class="aurora"></div>
+    <div class="spotlight"></div>
+    <div class="background-grid"></div>
+  </div>
+  <header class="topbar">
+    <div class="brand"><span class="logo">设</span>设计模式刷题平台</div>
+    <nav class="topnav">
+      <a href="/" class="active">题目列表</a>
+      <a href="#" id="reset-progress">重置进度</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <h3>目录 · 23 种设计模式</h3>
+      <div id="sidebar-tree"></div>
+    </aside>
+    <main class="content">
+      <div class="hero">
+        <h1>通过刷题学会 23 种设计模式</h1>
+        <p>左边看讲解，右边写代码，运行 / 提交 / 查看答案，边学边练。覆盖创建型、结构型、行为型三大类 GoF 设计模式。</p>
+        <div class="progress-row">
+          <div class="progress-bar"><span id="progress-fill" style="width:0%"></span></div>
+          <div class="progress-stat" id="progress-stat">0<small>/ 23 已通过</small></div>
+        </div>
+      </div>
+      <div id="categories"></div>
+    </main>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

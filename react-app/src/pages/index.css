@@ -1,0 +1,63 @@
+.index-content { padding: 28px 32px; }
+
+.index-hero {
+  padding: 26px 28px;
+  margin-bottom: 28px;
+  background: var(--accent-yellow);
+}
+.index-hero h1 { margin: 0 0 8px; font-size: 26px; text-transform: uppercase; letter-spacing: .02em; }
+.index-hero .hl { color: var(--primary); }
+.index-hero p { margin: 0 0 20px; color: var(--ink-soft); font-weight: 500; }
+.index-progress-row { display: flex; align-items: center; gap: 14px; }
+.index-progress-stat { white-space: nowrap; font-size: 15px; }
+.index-progress-stat small { color: var(--muted); font-weight: 700; margin-left: 4px; }
+
+.index-section { margin-bottom: 10px; }
+.index-section-title { display: flex; align-items: baseline; gap: 10px; margin: 30px 0 16px; }
+.index-section-title h2 {
+  margin: 0;
+  font-size: 19px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 6px 14px;
+  display: inline-block;
+}
+.index-section-count { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+.index-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  height: 100%;
+  background: var(--paper);
+}
+.index-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.index-no { color: var(--muted); font-size: 12px; font-weight: 700; }
+.index-card-title { margin: 0; font-size: 18px; }
+.index-card-en { color: var(--primary); font-size: 13px; font-weight: 700; margin: 4px 0 10px; }
+.index-card-summary {
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  margin: 0 0 16px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.index-card-meta { display: flex; align-items: center; gap: 8px; }
+.index-card:hover h3 { color: var(--primary); }
+
+.index-loading, .index-error {
+  padding: 60px;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+.index-error { color: var(--red); }

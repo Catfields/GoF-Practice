@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>浏览器自检 - 设计模式刷题平台</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="problem-page">
+  <header class="topbar">
+    <div class="brand"><span class="logo">测</span>编辑器浏览器自检</div>
+    <nav class="topnav">
+      <a href="/">题目列表</a>
+      <a href="#" id="nav-prev" class="ghost-btn">‹ 上一题</a>
+      <a href="#" id="nav-next">下一题 ›</a>
+    </nav>
+  </header>
+
+  <div class="problem-layout">
+    <section class="panel-left" id="description">加载中…</section>
+
+    <section class="panel-right">
+      <div class="editor-toolbar">
+        <select id="language">
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="go">Go</option>
+          <option value="javascript">JavaScript</option>
+        </select>
+        <button class="btn primary" id="btn-run" disabled>运行</button>
+        <button class="btn success" id="btn-submit" disabled>提交</button>
+        <button class="btn" id="btn-submissions" disabled>提交记录</button>
+        <button class="btn" id="btn-solution" disabled>查看答案</button>
+        <button class="btn" id="btn-restore" hidden>返回我的代码</button>
+        <button class="btn" id="btn-reset" disabled>重置</button>
+        <span class="spacer"></span>
+        <button class="btn icon-btn" id="btn-wrap">自动换行：关</button>
+        <button class="btn icon-btn" id="btn-comment">注释</button>
+        <span class="run-info" id="solve-badge"></span>
+      </div>
+
+      <div class="editor-wrap">
+        <div id="code-editor" class="ced-host"></div>
+        <div class="editor-status">
+          <span id="save-status" class="save-status"></span>
+          <span id="editor-status"></span>
+        </div>
+      </div>
+
+      <div class="io-panel">
+        <div class="io-head">
+          <label>输入</label>
+          <textarea id="input" spellcheck="false"></textarea>
+          <span class="io-hint" id="input-hint"></span>
+        </div>
+        <div class="console" id="output">…</div>
+      </div>
+    </section>
+  </div>
+
+  <pre id="test-report" style="position:fixed;left:0;bottom:0;z-index:999;max-height:45vh;overflow:auto;background:#0b1220;color:#a5e075;font-size:12px;margin:0;padding:8px;width:100%;white-space:pre-wrap">运行中…</pre>
+
+  <div class="modal-overlay hidden" id="submissions-modal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>已通过的提交记录</h3>
+        <button class="btn icon-btn" id="subs-close" title="关闭">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="subs-list" id="subs-list"></div>
+        <div class="subs-detail hidden" id="subs-detail">
+          <div class="subs-detail-head">
+            <button class="btn ghost" id="subs-back">‹ 返回列表</button>
+            <span id="subs-detail-meta"></span>
+          </div>
+          <div class="subs-detail-code">
+            <div class="subs-code-head"><span id="subs-code-lang"></span><span id="subs-code-time"></span></div>
+            <pre id="subs-code"></pre>
+          </div>
+          <div class="subs-detail-results" id="subs-results"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/editor-lexer.js"></script>
+  <script src="/js/editor.js"></script>
+  <script src="/js/problem.js"></script>
+  <script src="/browser-check.js"></script>
+</body>
+</html>

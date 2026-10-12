@@ -1,0 +1,148 @@
+/* =========================================================================
+   代码编辑器（保留 .ced-* 结构，Brutalist 换肤）
+   ========================================================================= */
+.editor-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  background: var(--paper);
+  overflow: hidden;
+  border-top: 3px solid var(--brutal-border-color);
+}
+.editor-status {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  background: var(--bg);
+  border: 2px solid var(--brutal-border-color);
+  padding: 4px 10px;
+  pointer-events: none;
+  z-index: 3;
+  max-width: calc(100% - 28px);
+  box-shadow: 3px 3px 0 0 var(--brutal-shadow-color);
+}
+.save-status { color: var(--muted); font-weight: 700; }
+.save-status.dirty { color: var(--amber); }
+.save-status.saved { color: var(--green); }
+
+.ced-host {
+  --ced-font: var(--font-mono);
+  --ced-size: 13.5px;
+  --ced-line: 22px;
+  --ced-ch: 8.1px;
+  --ced-pad-y: 14px;
+  --ced-pad-x: 16px;
+  --ced-gutter-bg: #efece4;
+  --ced-gutter-fg: #8a867c;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--paper);
+  font-family: var(--ced-font);
+  font-size: var(--ced-size);
+  line-height: var(--ced-line);
+}
+.ced-gutter {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  background: var(--ced-gutter-bg);
+  border-right: 2px solid var(--brutal-border-color);
+  overflow: hidden;
+}
+.ced-gutter-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: var(--ced-pad-y);
+  text-align: right;
+  color: var(--ced-gutter-fg);
+  line-height: var(--ced-line);
+  white-space: pre;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+  will-change: transform;
+}
+.ced-view {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.ced-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.ced-code,
+.ced-input {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--ced-line);
+  padding: var(--ced-pad-y) var(--ced-pad-x);
+  border: 0;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  letter-spacing: normal;
+  text-align: left;
+  box-sizing: border-box;
+}
+.ced-code {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  width: max-content;
+  color: var(--ink);
+  background: transparent;
+  pointer-events: none;
+  will-change: transform;
+}
+.ced-input {
+  position: relative;
+  z-index: 1;
+  display: block;
+  resize: none;
+  outline: none;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--primary);
+  overflow-x: auto;
+  overflow-y: auto;
+  tab-size: 4;
+}
+.ced-input::selection { background: rgba(43, 89, 255, .3); }
+.ced-input:disabled { cursor: not-allowed; }
+.ced-host.ced-disabled { opacity: .72; }
+.ced-host.ced-wrap .ced-code,
+.ced-host.ced-wrap .ced-input {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.ced-host.ced-wrap .ced-input { overflow-x: hidden; }
+
+/* 语法高亮配色（Neo-Brutalism 高饱和） */
+.ced-code .tk-kw { color: #1d1df5; font-weight: 700; }
+.ced-code .tk-str { color: #0d7a2e; font-weight: 600; }
+.ced-code .tk-cmt { color: #9a9387; font-style: italic; }
+.ced-code .tk-num { color: #d81f2a; font-weight: 600; }
+.ced-code .tk-fn { color: #b45309; }
+.ced-code .tk-cls { color: #8b2af5; font-weight: 700; }
+.ced-code .tk-lit { color: #c2185b; font-weight: 600; }
+.ced-code .tk-op { color: #0b6f7a; font-weight: 600; }
+.ced-code .tk-punc { color: #5a564e; }

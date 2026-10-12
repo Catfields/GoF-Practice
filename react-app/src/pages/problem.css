@@ -1,0 +1,138 @@
+/* Problem 页 —— Neo-Brutalism */
+.problem-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  height: calc(100vh - 64px);
+  max-width: 1600px;
+  margin: 0 auto;
+  border-left: 3px solid var(--brutal-border-color);
+  border-right: 3px solid var(--brutal-border-color);
+}
+.panel-left {
+  overflow-y: auto;
+  background: var(--paper);
+  border-right: 3px solid var(--brutal-border-color);
+  padding: 22px 26px;
+}
+.panel-right {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--paper);
+}
+
+/* ---- 描述面板 ---- */
+.desc-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.desc-head h1 { margin: 0; font-size: 22px; }
+.desc-sub { color: var(--muted); font-size: 13px; margin: 6px 0 16px; font-weight: 700; }
+.desc-block { margin: 18px 0; }
+.desc-block h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  background: var(--ink);
+  color: var(--paper);
+  display: inline-block;
+  padding: 3px 10px;
+}
+.desc-block p { margin: 0; color: var(--ink-soft); }
+
+.codebox {
+  background: var(--bg);
+  border: 3px solid var(--brutal-border-color);
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 8px 0;
+  box-shadow: 3px 3px 0 0 var(--brutal-shadow-color);
+}
+.io-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--paper);
+  background: var(--primary);
+  border: 2px solid var(--brutal-border-color);
+  padding: 0 8px;
+  margin-right: 8px;
+}
+
+/* ---- 编辑工具栏 ---- */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 3px solid var(--brutal-border-color);
+  background: var(--bg);
+  flex-wrap: wrap;
+}
+.editor-toolbar .spacer { flex: 1; }
+.run-info { font-weight: 800; font-size: 13px; }
+.run-info.solved { color: var(--green); }
+.run-info.unsolved { color: var(--red); }
+
+/* ---- IO 面板 ---- */
+.io-panel {
+  border-top: 3px solid var(--brutal-border-color);
+  background: var(--paper);
+  max-height: 38%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.io-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-bottom: 2px solid var(--brutal-border-color);
+  background: var(--bg);
+}
+.io-head label { font-size: 12px; font-weight: 800; white-space: nowrap; text-transform: uppercase; }
+.io-hint { font-size: 11px; color: var(--muted); white-space: nowrap; font-weight: 600; }
+.io-head textarea {
+  flex: 1;
+  resize: none;
+  border: 2px solid var(--brutal-border-color);
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  height: 28px;
+  background: var(--paper);
+  color: var(--ink);
+  outline: none;
+}
+.io-head textarea:focus { background: var(--accent-yellow); }
+
+.brx-console {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  white-space: pre-wrap;
+  color: var(--ink);
+  background: var(--paper);
+}
+.brx-console-line { white-space: pre-wrap; }
+.brx-console-empty { color: var(--muted); font-style: italic; }
+.brx-console .ok { color: var(--green); }
+.brx-console .err { color: var(--red); }
+.brx-console .run-info { color: var(--muted); }
+.brx-console .case-pass { color: var(--green); font-weight: 700; }
+.brx-console .case-fail { color: var(--red); font-weight: 700; }
+
+@media (max-width: 1000px) {
+  .problem-layout { grid-template-columns: 1fr; height: auto; overflow: visible; }
+  .panel-left { border-right: 0; border-bottom: 3px solid var(--brutal-border-color); }
+  .panel-right { min-height: 60vh; }
+  .editor-wrap { min-height: 320px; }
+}
+
+/* ---- 编辑器页脚（顶部条）栅格 ----- */
+.problem-titlebar { display: none; }
